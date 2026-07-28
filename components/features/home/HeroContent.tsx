@@ -6,7 +6,7 @@ import HeroButtons from './HeroButtons';
 export default function HeroContent() {
   return (
     <div className="z-20 mx-auto flex max-w-xl flex-col items-center space-y-8 text-center lg:mx-0 lg:items-start lg:text-left">
-      {/* Badge */}
+      {/* Small Premium Pill Badge */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function HeroContent() {
         </span>
       </motion.h1>
 
-      {/* Supporting Copy */}
+      {/* Supporting Statement */}
       <motion.p
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}

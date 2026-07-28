@@ -16,13 +16,13 @@ export default function Hero() {
 
   return (
     <section className="relative flex h-screen min-h-screen w-full items-center justify-center overflow-hidden bg-black px-6 pt-20 text-white md:px-12">
-      {/* Layer 1: Background Lighting & Depth */}
+      {/* Background Lighting & Glossy Depth Base */}
       <HeroBackground />
 
-      {/* Layer 2: Full-Bleed 3D R3F Canvas */}
+      {/* Reserved 3D Full-Bleed Canvas Container */}
       <HeroCanvas />
 
-      {/* Layer 3: Main Editorial Content Overlay */}
+      {/* Main Editorial Content Overlay */}
       <motion.div
         style={{ scale: heroScale, opacity: heroOpacity }}
         className="pointer-events-none relative z-20 mx-auto flex h-full w-full max-w-7xl items-center"
