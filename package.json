@@ -1,0 +1,45 @@
+{
+  "name": "fliq-digital-flagship",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.4",
+    "@react-three/fiber": "^9.1.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.42.2",
+    "lucide-react": "^0.475.0",
+    "motion": "^12.4.7",
+    "next": "^15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.1",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.6",
+    "@tailwindcss/postcss": "^4.0.8",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/three": "^0.174.0",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "^15.1.7",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "postcss": "^8.5.2",
+    "prettier": "^3.5.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.8",
+    "typescript": "^5.7.3"
+  }
+}

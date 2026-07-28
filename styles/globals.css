@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --font-inter: var(--font-inter);
+    --font-cormorant: var(--font-cormorant);
+    --background: #050505;
+    --foreground: #ffffff;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-cormorant), serif;
+    font-weight: inherit;
+  }
+
+  ::selection {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  /* Luxury Vignette & Grain Layer */
+  .bg-vignette {
+    background: radial-gradient(circle at 50% 50%, rgba(20, 20, 25, 0.3) 0%, rgba(5, 5, 5, 1) 100%);
+  }
+
+  /* Custom Smooth Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
+}
