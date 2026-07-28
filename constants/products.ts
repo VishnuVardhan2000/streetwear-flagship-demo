@@ -13,9 +13,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     fabricDetails:
       'Combed 100% Organic Cotton French Terry. Pre-shrunk weave with heavyweight ribbing on cuffs and hem.',
     image: '/images/products/fliq-look-01.jpg',
+    garmentImage: '/images/products/hoodie_detail.jpg',
     fabricImage: '/images/products/hoodie_obsidian.jpg',
-    garmentImage: '/images/products/fliq-look-01.jpg',
-    campaignImage: '/images/products/fliq-look-01.jpg',
+    campaignImage: '/images/products/hoodie_campaign.jpg',
   },
   {
     id: '02',
@@ -29,9 +29,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     fabricDetails:
       'Water-repellent 3-layer matte nylon shell with satin viscose lining and custom gunmetal zips.',
     image: '/images/products/fliq-look-02.jpg',
+    garmentImage: '/images/products/bomber_detail.jpg',
     fabricImage: '/images/products/bomber_jacket.jpg',
-    garmentImage: '/images/products/fliq-look-02.jpg',
-    campaignImage: '/images/products/fliq-look-02.jpg',
+    campaignImage: '/images/products/bomber_campaign.jpg',
   },
   {
     id: '03',
@@ -45,9 +45,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     fabricDetails:
       '300GSM Ring-spun Organic Cotton. High-density weave engineered for structured draping.',
     image: '/images/products/fliq-look-03.jpg',
+    garmentImage: '/images/products/tee_detail.jpg',
     fabricImage: '/images/products/fliq-look-03.jpg',
-    garmentImage: '/images/products/fliq-look-03.jpg',
-    campaignImage: '/images/products/fliq-look-03.jpg',
+    campaignImage: '/images/products/tee_campaign.jpg',
   },
   {
     id: '04',
@@ -60,9 +60,9 @@ export const APPAREL_PRODUCTS: Product[] = [
       'Relaxed-fit tactical cargo trousers constructed from heavy olive cotton ripstop twill. Features deep gusseted pockets and matte black hardware.',
     fabricDetails: '380GSM Heavy Cotton Ripstop Twill with reinforced knee articulation.',
     image: '/images/products/fliq-look-04.jpg',
+    garmentImage: '/images/products/cargo_detail.jpg',
     fabricImage: '/images/products/fliq-look-04.jpg',
-    garmentImage: '/images/products/fliq-look-04.jpg',
-    campaignImage: '/images/products/fliq-look-04.jpg',
+    campaignImage: '/images/products/cargo_campaign.jpg',
   },
   {
     id: '05',
@@ -76,9 +76,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     fabricDetails:
       '14oz 100% Cotton Rigid Selvedge Denim with custom embossed leather waistband patch.',
     image: '/images/products/fliq-look-05.jpg',
+    garmentImage: '/images/products/denim_detail.jpg',
     fabricImage: '/images/products/fliq-look-05.jpg',
-    garmentImage: '/images/products/fliq-look-05.jpg',
-    campaignImage: '/images/products/fliq-look-05.jpg',
+    campaignImage: '/images/products/denim_campaign.jpg',
   },
   {
     id: '06',
@@ -92,8 +92,8 @@ export const APPAREL_PRODUCTS: Product[] = [
     fabricDetails:
       'Hydrophobic tech-canvas with bonded seam tape and weatherproof YKK Aquaguard zips.',
     image: '/images/products/fliq-look-06.jpg',
+    garmentImage: '/images/products/utility_detail.jpg',
     fabricImage: '/images/products/fliq-look-06.jpg',
-    garmentImage: '/images/products/fliq-look-06.jpg',
-    campaignImage: '/images/products/fliq-look-06.jpg',
+    campaignImage: '/images/products/utility_campaign.jpg',
   },
 ];

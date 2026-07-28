@@ -47,7 +47,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [product, nextSlide, prevSlide, onClose]);
 
-  // Mouse Wheel Navigation with debounced lock
+  // Mouse Wheel Navigation
   const handleWheel = (e: React.WheelEvent) => {
     if (wheelLock.current) return;
     if (Math.abs(e.deltaY) > 30) {
@@ -94,10 +94,10 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
   if (!product) return null;
 
   const slides = [
-    { title: 'PRODUCT PRESENTATION', label: 'VIEW 01 // HERO PRODUCT' },
-    { title: 'FABRIC & CONSTRUCTION', label: 'VIEW 02 // FABRIC DETAIL' },
-    { title: 'GARMENT SILHOUETTE', label: 'VIEW 03 // FULL GARMENT' },
-    { title: 'EDITORIAL CAMPAIGN', label: 'VIEW 04 // LIFESTYLE EDITORIAL' },
+    { title: 'HERO PRODUCT', label: 'LOOK 01 // HERO PRESENTATION' },
+    { title: 'DESIGN CLOSE-UP', label: 'LOOK 02 // CONSTRUCTION DETAIL' },
+    { title: 'FABRIC DETAIL', label: 'LOOK 03 // TEXTURE INSPECTION' },
+    { title: 'EDITORIAL CAMPAIGN', label: 'LOOK 04 // LIFESTYLE EDITORIAL' },
   ];
 
   return (
@@ -138,9 +138,10 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
           </div>
         </div>
 
-        {/* Main Slide Carousel Window (Occupies ~90% Viewport) */}
+        {/* Main Slide Carousel Window */}
         <div className="relative flex h-full w-full items-center justify-center pt-20 pb-16">
           <AnimatePresence mode="wait">
+            {/* LOOK 01: HERO PRODUCT */}
             {currentSlide === 0 && (
               <motion.div
                 key="slide-0"
@@ -150,7 +151,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="grid h-full w-full max-w-7xl grid-cols-1 items-center gap-8 px-6 md:px-12 lg:grid-cols-12"
               >
-                {/* Product Hero Image */}
+                {/* Hero Garment Image */}
                 <div className="relative h-[55vh] w-full overflow-hidden border border-white/10 bg-zinc-900 lg:col-span-7 lg:h-[75vh]">
                   <Image
                     src={product.image}
@@ -162,7 +163,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
 
-                {/* Product Information Details */}
+                {/* Product Info Panel */}
                 <div className="flex flex-col justify-center space-y-6 lg:col-span-5">
                   <div>
                     <span className="mb-2 block font-sans text-[10px] tracking-[0.3em] text-zinc-500 uppercase">
@@ -185,9 +186,15 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
 
                   <div className="space-y-2 border-t border-b border-white/10 py-4">
                     <span className="block font-sans text-[10px] tracking-[0.25em] text-zinc-500 uppercase">
-                      SPECIFICATIONS
+                      COLOR & SPECIFICATION
                     </span>
-                    <p className="font-sans text-xs tracking-wider text-zinc-300 uppercase">
+                    <div className="flex items-center space-x-3">
+                      <span className="h-3 w-3 rounded-full border border-white/40 bg-black" />
+                      <span className="font-sans text-xs tracking-wider text-zinc-300 uppercase">
+                        BLACK ONLY
+                      </span>
+                    </div>
+                    <p className="pt-1 font-sans text-[11px] tracking-wider text-zinc-400 uppercase">
                       {product.spec}
                     </p>
                   </div>
@@ -198,11 +205,11 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                       SELECT SIZE
                     </span>
                     <div className="flex space-x-3">
-                      {['S', 'M', 'L', 'XL'].map((size) => (
+                      {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
-                          className={`h-11 w-12 border text-xs font-semibold tracking-wider transition-all ${
+                          className={`h-11 w-11 border text-xs font-semibold tracking-wider transition-all ${
                             selectedSize === size
                               ? 'border-white bg-white text-black'
                               : 'border-white/20 bg-transparent text-white hover:border-white/50'
@@ -235,6 +242,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
               </motion.div>
             )}
 
+            {/* LOOK 02: DESIGN CLOSE-UP */}
             {currentSlide === 1 && (
               <motion.div
                 key="slide-1"
@@ -244,10 +252,36 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="relative flex h-[75vh] w-full max-w-6xl flex-col items-center justify-center px-6 md:px-12"
               >
+                <div className="group relative h-full w-full overflow-hidden border border-white/10 bg-zinc-900">
+                  <Image
+                    src={product.garmentImage}
+                    alt={`${product.title} Design Close-up`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-6 left-6 z-10 border border-white/15 bg-black/60 px-4 py-2 backdrop-blur-md">
+                    <span className="font-sans text-[10px] tracking-[0.25em] text-white uppercase">
+                      CONSTRUCTION & STITCHING DETAILS
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* LOOK 03: FABRIC DETAIL */}
+            {currentSlide === 2 && (
+              <motion.div
+                key="slide-2"
+                initial={{ opacity: 0, scale: 0.96, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, scale: 1.04, filter: 'blur(10px)' }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="relative flex h-[75vh] w-full max-w-6xl flex-col items-center justify-center px-6 md:px-12"
+              >
                 <div
                   onClick={() => setIsZoomed(!isZoomed)}
                   className={`relative h-full w-full cursor-zoom-in overflow-hidden border border-white/10 bg-zinc-900 transition-all duration-500 ${
-                    isZoomed ? 'scale-110' : 'scale-100'
+                    isZoomed ? 'scale-105' : 'scale-100'
                   }`}
                 >
                   <Image
@@ -261,7 +295,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                   <div className="absolute top-6 left-6 z-10 flex items-center space-x-2 border border-white/15 bg-black/60 px-4 py-2 backdrop-blur-md">
                     <ZoomIn size={14} className="text-white" />
                     <span className="font-sans text-[10px] tracking-[0.25em] text-white uppercase">
-                      {isZoomed ? 'CLICK TO RESET ZOOM' : 'CLICK TO ENLARGE TEXTURE'}
+                      {isZoomed ? 'CLICK TO RESET ZOOM' : 'CLICK TO ENLARGE FABRIC WEAVE'}
                     </span>
                   </div>
 
@@ -277,47 +311,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
               </motion.div>
             )}
 
-            {currentSlide === 2 && (
-              <motion.div
-                key="slide-2"
-                initial={{ opacity: 0, scale: 0.96, filter: 'blur(10px)' }}
-                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, scale: 1.04, filter: 'blur(10px)' }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="grid h-[75vh] w-full max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-2 md:px-12"
-              >
-                {/* Front View */}
-                <div className="group relative h-full w-full overflow-hidden border border-white/10 bg-zinc-900">
-                  <Image
-                    src={product.garmentImage}
-                    alt={`${product.title} Front View`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 z-10 border border-white/15 bg-black/60 px-3 py-1 backdrop-blur-md">
-                    <span className="font-sans text-[10px] tracking-[0.25em] text-white uppercase">
-                      FRONT VIEW SILHOUETTE
-                    </span>
-                  </div>
-                </div>
-
-                {/* Back / Angle View */}
-                <div className="group relative h-full w-full overflow-hidden border border-white/10 bg-zinc-900">
-                  <Image
-                    src={product.image}
-                    alt={`${product.title} Back View`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 z-10 border border-white/15 bg-black/60 px-3 py-1 backdrop-blur-md">
-                    <span className="font-sans text-[10px] tracking-[0.25em] text-white uppercase">
-                      STRUCTURE & REAR TAILORING
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
+            {/* LOOK 04: EDITORIAL CAMPAIGN */}
             {currentSlide === 3 && (
               <motion.div
                 key="slide-3"
@@ -349,7 +343,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
           </AnimatePresence>
         </div>
 
-        {/* Carousel Prev/Next Arrow Navigation Buttons */}
+        {/* Prev / Next Arrow Navigation */}
         <button
           onClick={prevSlide}
           className="absolute top-1/2 left-4 z-40 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-4 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black md:left-8"
@@ -366,7 +360,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
           <ChevronRight size={20} />
         </button>
 
-        {/* Bottom View Indicator Pagination Dots */}
+        {/* Slide Indicator Dots */}
         <div className="absolute inset-x-0 bottom-6 z-30 flex items-center justify-center space-x-3">
           {slides.map((_, idx) => (
             <button
@@ -378,7 +372,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 currentSlide === idx ? 'w-8 bg-white' : 'w-2 bg-zinc-600 hover:bg-zinc-400'
               }`}
-              aria-label={`Go to view ${idx + 1}`}
+              aria-label={`Go to look ${idx + 1}`}
             />
           ))}
         </div>
