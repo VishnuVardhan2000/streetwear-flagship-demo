@@ -1,6 +1,6 @@
 # FLIQ PRODUCT ASSET BIBLE & CREATIVE DIRECTION FOUNDATION
 
-**Version**: 1.0.0 (Production Master Specification)  
+**Version**: 2.0.0 (Expanded Master Specification)  
 **Status**: Approved & Single Source of Truth  
 **Target Brand**: FLIQ Unisex Clothing (Hyderabad, India)
 
@@ -57,7 +57,6 @@ Creative directors, architects, tech innovators, luxury connoisseurs, and street
 - **Collection**: VOID
 - **Category**: Heavyweight Sweatshirts & Outerwear
 - **Primary Colorway**: Deep Obsidian Black (`#08080a`)
-- **Alternative Colorways**: None (Strictly Monochrome Black)
 - **Silhouette**: Boxy Monolithic Silhouette with Drop Shoulder
 - **Fit**: Oversized Architectural Cut
 - **Fabric**: 100% Combed Organic Cotton French Terry
@@ -82,7 +81,6 @@ Creative directors, architects, tech innovators, luxury connoisseurs, and street
 - **Collection**: NEON DISTRICT
 - **Category**: Technical Outerwear & Jackets
 - **Primary Colorway**: Graphite Matte Grey (`#27272a`)
-- **Alternative Colorways**: None
 - **Silhouette**: Tactical Oversized Bomber
 - **Fit**: Relaxed Volume Fit
 - **Fabric**: Water-repellent 3-layer matte technical nylon shell with satin viscose lining.
@@ -101,13 +99,12 @@ Creative directors, architects, tech innovators, luxury connoisseurs, and street
 
 ---
 
-### Product 3: MONOLITH HEAVYWEIGHT TEE
+### Product 03: MONOLITH HEAVYWEIGHT TEE
 
 - **Product Code**: `FLIQ-APP-03`
 - **Collection**: CANVAS
 - **Category**: Heavyweight Tops & Tees
 - **Primary Colorway**: Off-White Cream (`#f4f4f5`)
-- **Alternative Colorways**: None
 - **Silhouette**: Minimalist Drop Shoulder Boxy Tee
 - **Fit**: Oversized Relaxed
 - **Fabric**: 100% Ring-spun Organic Cotton High-Density Jersey
@@ -132,7 +129,6 @@ Creative directors, architects, tech innovators, luxury connoisseurs, and street
 - **Collection**: RAW MOTION
 - **Category**: Utilitarian Trousers & Pants
 - **Primary Colorway**: Tactical Olive Green (`#3f4236`)
-- **Alternative Colorways**: None
 - **Silhouette**: Relaxed Straight Tactical Cargo
 - **Fit**: Ergonomic Articulated Fit
 - **Fabric**: Heavy Cotton Ripstop Twill
@@ -157,7 +153,6 @@ Creative directors, architects, tech innovators, luxury connoisseurs, and street
 - **Collection**: ATELIER
 - **Category**: Selvedge Denim
 - **Primary Colorway**: Dark Raw Indigo (`#1e2330`)
-- **Alternative Colorways**: None
 - **Silhouette**: Straight Leg Monolithic Fit
 - **Fit**: Rigid Regular Straight
 - **Fabric**: 100% Cotton Rigid Selvedge Denim
@@ -181,7 +176,6 @@ Creative directors, architects, tech innovators, luxury connoisseurs, and street
 - **Product Code**: `FLIQ-APP-06`
 - **Category**: Outerwear & Utility Jackets
 - **Primary Colorway**: Dark Charcoal Grey (`#18181b`)
-- **Alternative Colorways**: None
 - **Silhouette**: Asymmetrical Storm Flap Outerwear Jacket
 - **Fit**: Structured Oversized
 - **Fabric**: Hydrophobic Technical Canvas with Bonded Seam Tape
@@ -218,12 +212,6 @@ Creative directors, architects, tech innovators, luxury connoisseurs, and street
 
 - **Background**: Seamless matte black studio backdrop (`#000000`) with polished black glass floor reflections.
 - **Environment**: Zero studio props, zero distraction, pure space.
-
-### 4.4 Color Grading & Editing Style
-
-- **Color Profile**: Desaturated neutrals with enhanced deep black values.
-- **Texture Sharpness**: Unsharp mask tuned specifically for cotton weaves, nylon sheen, and denim twill lines.
-- **Color Accuracy**: Absolute fidelity to garment swatches (Zero hue distortion).
 
 ---
 
@@ -266,18 +254,16 @@ Every product in the FLIQ collection MUST provide exactly 4 gallery views:
 
 ### 6.1 Garment Identity Rules
 
-1. **Identical Hardware**: The zipper pullers, buttons, drawstrings, and metal rivets depicted in View 01 MUST match View 02, View 03, and View 04 without variation.
-2. **Identical Fabric Weave**: A 500GSM French Terry hoodie MUST show identical fleece loop density across all views.
-3. **Identical Branding**: Logo scale (e.g., 12mm back collar micro-embroidery) MUST remain perfectly consistent across all angles.
-4. **Zero Footwear or Accessories**: No shoes, caps, bags, or jewelry are permitted in product shots or cards.
+1. **Identical Hardware**: Zipper pullers, snap buttons, drawstrings, and metal rivets MUST match across all 4 views.
+2. **Identical Fabric Weave**: GSM loop density and twill weave structure MUST remain constant across angles.
+3. **Identical Branding**: Logo scale and placement (12mm back collar micro-embroidery) MUST be anchored.
+4. **Zero Footwear or Accessories**: STRICTLY NO shoes, caps, bags, watches, or jewelry in any shot.
 
 ---
 
 ## 7. AI ASSET GENERATION RULES
 
 ### 7.1 Reusable Prompt Master Template
-
-When generating new editorial or product imagery using AI generation tools, use the following standardized prompt architecture:
 
 ```text
 High-fashion editorial product photography of [PRODUCT_NAME], [SILHOUETTE_DESCRIPTION], constructed from [MATERIAL_SPECIFICATION], color [COLORWAY]. Shot on Hasselblad H6D-100c, 120mm macro lens, f/8, studio lighting with hard rim light and seamless black background (#000000). Brutalist luxury aesthetic, sharp weave texture, ultra-detailed stitching, zero footwear, zero accessories.
@@ -296,8 +282,152 @@ footwear, shoes, sneakers, boots, caps, hats, accessories, watches, jewellery, c
 - [x] Complete markdown document created at `docs/FLIQ_PRODUCT_ASSET_BIBLE.md`.
 - [x] All six approved apparel items fully specified with technical specs.
 - [x] Collection identities defined (`VOID`, `NEON DISTRICT`, `CANVAS`, `RAW MOTION`, `ATELIER`).
-- [x] Photography, lighting, and camera rules documented.
-- [x] 4-View gallery specification documented.
-- [x] Identity consistency and hardware rules established.
-- [x] Reusable AI generation prompts and negative rules included.
-- [x] Zero placeholder text, zero shoes, zero footware.
+- [x] Photography, lighting, camera, and gallery rules documented.
+
+---
+
+## 9. FLIQ SIGNATURE DESIGN LANGUAGE
+
+### 9.1 Signature Seam Philosophy
+
+- **Flatlock Double-Needle Seam Reinforcement**: All stress points (shoulder joins, armholes, crotch gussets) feature 6mm flatlock seam reinforcement for structural durability.
+- **Minimal External Topstitching**: Outer faces present clean, un-distracted panels with concealed internal seam allowances.
+
+### 9.2 Signature Embroidery Language
+
+- **Tonal Nape Micro-Embroidery**: Every upper garment features a 12mm x 4mm high-density tonal embroidery on the rear collar nape (`FLIQ` logo).
+- **Lower Hem Micro-Emblems**: Tops in the `CANVAS` collection carry a 8mm micro-embroidered emblem anchored precisely 15mm above the left side hem line.
+
+### 9.3 Signature Logo Placement
+
+- Primary: Posterior neck collar nape.
+- Secondary: Engraved 4mm typography on custom zipper pullers.
+- Tertiary: Debossed black leather patch on rear right denim waist.
+
+### 9.4 Signature Zipper & Hardware Language
+
+- **Heavy-duty YKK Aquaguard**: Matte black and gunmetal waterproof zips with rubberized tooth seals.
+- **Custom Matte Finish**: Zero bright polished chrome; hardware is finished exclusively in matte gunmetal, brushed nickel, or anodized black.
+
+### 9.5 Signature Silhouette Philosophy
+
+- **Boxy Monolithic Shoulders**: Drop shoulders positioned 45mm below natural shoulder points to create a widened, grounded upper torso block.
+- **Elongated Sleeves**: Sleeves engineered with 30mm extra length for natural architectural stack folds over wrists.
+
+### 9.6 Signature Pocket Architecture
+
+- **3D Gusseted Tactical Pockets**: Outer pockets feature 25mm deep box pleats and concealed magnetic flap closures.
+- **Concealed Kangaroo Pouch**: Sweatshirt pockets utilize hidden side-entry bar-tacks for a seamless front chest appearance.
+
+### 9.7 Signature Hem Construction
+
+- **Heavy 80mm Cuffs & Hems**: Ribbed hems on fleece feature 80mm 2x2 elastane-reinforced ribbing.
+- **Blind Hem & Straight Leg**: Trousers utilize un-cinched straight hem openings designed to drop cleanly over footwear-free profiles.
+
+---
+
+## 10. EXPANDED COLOR SYSTEM
+
+Every product defines a strict hierarchy of muted, luxury-bound colorways:
+
+| Product Code              | Primary Colorway            | Secondary Colorway         | Seasonal Colorway           | Limited Edition Colorway          |
+| :------------------------ | :-------------------------- | :------------------------- | :-------------------------- | :-------------------------------- |
+| **FLIQ-APP-01** (Hoodie)  | Obsidian Black (`#08080a`)  | Pitch Charcoal (`#18181b`) | Concrete Ash (`#383533`)    | Plum Black (`#2b262d`)            |
+| **FLIQ-APP-02** (Bomber)  | Graphite Grey (`#27272a`)   | Matte Black (`#09090b`)    | Basalt Olive (`#2c302e`)    | Titanium Chrome (`#71717a`)       |
+| **FLIQ-APP-03** (Tee)     | Off-White Cream (`#f4f4f5`) | Raw Chalk (`#e4e4e7`)      | Stone Dust (`#a1a1aa`)      | Washed Carbon (`#27272a`)         |
+| **FLIQ-APP-04** (Cargo)   | Tactical Olive (`#3f4236`)  | Dark Khaki (`#44403c`)     | Mud Clay (`#382e2b`)        | Deep Obsidian (`#08080a`)         |
+| **FLIQ-APP-05** (Denim)   | Dark Raw Indigo (`#1e2330`) | Washed Black (`#18181b`)   | Concrete Grey (`#3f3f46`)   | Bleached Indigo (`#3b82f6` Muted) |
+| **FLIQ-APP-06** (Utility) | Dark Charcoal (`#18181b`)   | Midnight Navy (`#0f172a`)  | Weathered Slate (`#334155`) | Matte Stealth (`#020617`)         |
+
+---
+
+## 11. PATTERN & GRAPHIC LANGUAGE
+
+### 11.1 Graphic Typologies
+
+- **Oversized Nape Graphics**: Subtle low-contrast tonal silk-screen prints positioned on upper back panels (Max opacity: 15%).
+- **Tonal Silicone Prints**: Matte-on-gloss 3D silicone heat-transfer logos with 1.0mm elevation.
+- **High-Density 3D Rubberized Typography**: Micro-scale 1.5mm rubberized lettering for technical garment specifications.
+- **Woven Satin Seam Patches**: Black satin labels sewn into internal seam structures.
+
+### 11.2 Exclusion Rules (Strictly Forbidden)
+
+- ❌ **NO Neon or Bright Contrast Prints**: Zero bright reds, blues, or yellows.
+- ❌ **NO Vintage Distressing**: Zero fake tears, distressed holes, or artificial fraying.
+- ❌ **NO All-Over Patterns**: Zero camouflage, floral, paisley, or repeated logo grid patterns.
+
+---
+
+## 12. CAMPAIGN WORLD & ENVIRONMENT
+
+### 12.1 Location Matrix
+
+- **Subterranean Monolithic Concrete**: Raw poured concrete rotundas, brutalist stairwells, and subterranean galleries.
+- **Basalt Stone Quarries**: Dark volumetric stone landscapes with wet glass floor reflections.
+- **Architectural Dark Glass Atriums**: Minimalist black glass pavilions under diffused overcast skies.
+
+### 12.2 Volumetrics & Lighting
+
+- **Lighting**: Diffused overhead softboxes combined with sharp 45-degree directional rim glares.
+- **Atmosphere**: Low-hanging volumetric mist, damp obsidian stone floors, cool 5600K daylight color balance.
+
+### 12.3 Music & Cinematic References
+
+- **Audio Mood**: Ambient low-frequency drone, cinematic sub-bass, minimal industrial techno rhythm.
+- **Film Influences**: _Blade Runner 2049_ (Denis Villeneuve), _Dune_ (Brutalist Architecture scenes), Yohji Yamamoto 1999 Archive Campaign Reels.
+
+---
+
+## 13. EDITORIAL MODEL BIBLE
+
+### 13.1 Casting Specifications
+
+- **Male Models**: Height 6'1"–6'3" (185cm–190cm); lean, athletic, structured jawline, calm impassive demeanor.
+- **Female Models**: Height 5'10"–6'0" (178cm–183cm); statuesque, minimalist features, sharp collarbones, quiet authority.
+
+### 13.2 Styling & Grooming Protocol
+
+- **Hair & Makeup**: Slicked-back natural hair, zero gloss makeup, raw skin texture, unpolished natural brows.
+- **Posing Language**: Architectural stance, weight anchored on rear foot, shoulders squared, eyes locked in an unblinking editorial gaze. Zero commercial smiling or casual slouching.
+- **Accessories Policy**: **STRICTLY ZERO** footwear, hats, caps, watches, necklaces, rings, or bags permitted.
+
+---
+
+## 14. PRODUCT MEASUREMENT STANDARDS
+
+Production reference dimensions across size ranges (All measurements in millimeters):
+
+| Category                           | Size       | Chest (Width) | Shoulder (Drop) | Sleeve Length | Garment Length | Hem Opening        |
+| :--------------------------------- | :--------- | :------------ | :-------------- | :------------ | :------------- | :----------------- |
+| **Hoodie** (`FLIQ-APP-01`)         | **M**      | 660mm         | 620mm           | 640mm         | 720mm          | 520mm (Ribbed)     |
+| **Bomber** (`FLIQ-APP-02`)         | **M**      | 640mm         | 600mm           | 650mm         | 680mm          | 500mm (Ribbed)     |
+| **Heavy Tee** (`FLIQ-APP-03`)      | **M**      | 600mm         | 580mm           | 260mm         | 740mm          | 600mm (Straight)   |
+| **Cargo Pants** (`FLIQ-APP-04`)    | **M** (32) | Waist 410mm   | Rise 340mm      | Inseam 760mm  | Total 1080mm   | Hem 220mm          |
+| **Denim Jeans** (`FLIQ-APP-05`)    | **M** (32) | Waist 420mm   | Rise 310mm      | Inseam 810mm  | Total 1100mm   | Hem 210mm          |
+| **Utility Jacket** (`FLIQ-APP-06`) | **M**      | 650mm         | 610mm           | 660mm         | 760mm          | 640mm (Adjustable) |
+
+---
+
+## 15. AI IDENTITY LOCK SYSTEM (IMMUTABLE FEATURE ANCHORS)
+
+To eliminate AI hallucination and feature mutation across Views 01–04:
+
+```
++-----------------------------------------------------------------------------------+
+|  AI FEATURE ANCHOR MATRIX                                                          |
++-----------------------------------------------------------------------------------+
+|  1. HARDWARE ANCHOR: Lock Zipper Tooth Count, Aglet Material, and Snap Placement. |
+|  2. SEAM ANCHOR: Lock Shoulder Seam Drop Angle (45mm) and Flatlock Stitch Width.  |
+|  3. POCKET ANCHOR: Lock Box Pleat Depth (25mm) and Flap Seam Geometry.            |
+|  4. BRANDING ANCHOR: Lock Micro-Embroidery Dimensions (12mm x 4mm Rear Nape).      |
+|  5. FABRIC ANCHOR: Lock Loop Density (500GSM Terry) and Twill Direction (14oz).   |
++-----------------------------------------------------------------------------------+
+```
+
+### 15.1 Prompts for Identity Preservation
+
+When generating variant views for a specific garment, append the following explicit anchor string:
+
+```text
+[GARMENT_ANCHOR]: Exact same garment identity, identical seam line placement, identical hardware zippers, identical fabric loop weight, identical 12mm nape embroidery, matching View 01 master asset. Zero feature drift, zero added zippers, zero extra pockets.
+```
