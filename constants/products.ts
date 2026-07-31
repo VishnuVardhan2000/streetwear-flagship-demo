@@ -16,6 +16,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     garmentImage: '/images/products/hoodie_detail.jpg',
     fabricImage: '/images/products/hoodie_obsidian.jpg',
     campaignImage: '/images/products/hoodie_campaign.jpg',
+    alternateColorImage: '/images/products/fliq-look-01.jpg',
+    alternateColorName: 'PITCH CHARCOAL (#18181B)',
+    lifestyleImage: '/images/products/hoodie_campaign.jpg',
   },
   {
     id: '02',
@@ -32,6 +35,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     garmentImage: '/images/products/bomber_detail.jpg',
     fabricImage: '/images/products/bomber_jacket.jpg',
     campaignImage: '/images/products/bomber_campaign.jpg',
+    alternateColorImage: '/images/products/fliq-look-02.jpg',
+    alternateColorName: 'MATTE BLACK (#09090B)',
+    lifestyleImage: '/images/products/bomber_campaign.jpg',
   },
   {
     id: '03',
@@ -48,6 +54,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     garmentImage: '/images/products/tee_detail.jpg',
     fabricImage: '/images/products/fliq-look-03.jpg',
     campaignImage: '/images/products/tee_campaign.jpg',
+    alternateColorImage: '/images/products/fliq-look-03.jpg',
+    alternateColorName: 'RAW CHALK (#E4E4E7)',
+    lifestyleImage: '/images/products/tee_campaign.jpg',
   },
   {
     id: '04',
@@ -63,6 +72,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     garmentImage: '/images/products/cargo_detail.jpg',
     fabricImage: '/images/products/fliq-look-04.jpg',
     campaignImage: '/images/products/cargo_campaign.jpg',
+    alternateColorImage: '/images/products/fliq-look-04.jpg',
+    alternateColorName: 'DARK KHAKI (#44403C)',
+    lifestyleImage: '/images/products/cargo_campaign.jpg',
   },
   {
     id: '05',
@@ -79,6 +91,9 @@ export const APPAREL_PRODUCTS: Product[] = [
     garmentImage: '/images/products/denim_detail.jpg',
     fabricImage: '/images/products/fliq-look-05.jpg',
     campaignImage: '/images/products/denim_campaign.jpg',
+    alternateColorImage: '/images/products/fliq-look-05.jpg',
+    alternateColorName: 'WASHED BLACK (#18181B)',
+    lifestyleImage: '/images/products/denim_campaign.jpg',
   },
   {
     id: '06',
@@ -95,5 +110,8 @@ export const APPAREL_PRODUCTS: Product[] = [
     garmentImage: '/images/products/utility_detail.jpg',
     fabricImage: '/images/products/fliq-look-06.jpg',
     campaignImage: '/images/products/utility_campaign.jpg',
+    alternateColorImage: '/images/products/fliq-look-06.jpg',
+    alternateColorName: 'MIDNIGHT NAVY (#0F172A)',
+    lifestyleImage: '/images/products/utility_campaign.jpg',
   },
 ];
