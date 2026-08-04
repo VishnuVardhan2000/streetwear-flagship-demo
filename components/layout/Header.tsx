@@ -44,11 +44,11 @@ export default function Header() {
           className="flex items-center transition-opacity hover:opacity-80"
         >
           <Image
-            src="/images/branding/fliq-logo-transparent-p2.png"
+            src="/images/branding/logo-white.svg"
             alt="FLIQ Unisex Clothing"
-            width={120}
-            height={40}
-            className="h-7 w-auto object-contain brightness-200 contrast-125"
+            width={130}
+            height={42}
+            className="h-7 w-auto object-contain"
             priority
           />
         </a>

@@ -20,11 +20,11 @@ export default function Footer() {
         {/* Brand, Location & Copyright */}
         <div className="flex flex-col space-y-3">
           <Image
-            src="/images/branding/fliq-logo-transparent-p2.png"
+            src="/images/branding/logo-white.svg"
             alt="FLIQ Unisex Clothing"
             width={140}
             height={45}
-            className="h-8 w-auto object-contain brightness-200 contrast-125"
+            className="h-8 w-auto object-contain"
           />
           <p className="font-sans text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
             FLAGSHIP // MADHAPUR, HYDERABAD (OPPOSITE GOWRA FOUNTAINHEAD)
