@@ -34,9 +34,11 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
         <h3 className="font-sans text-sm font-semibold tracking-wide uppercase transition-colors group-hover:text-zinc-300">
           {product.title}
         </h3>
-        <p className="font-sans text-[11px] tracking-[0.2em] text-zinc-400 uppercase">
-          {product.material}
-        </p>
+        {product.category && (
+          <p className="font-sans text-[11px] tracking-[0.2em] text-zinc-400 uppercase">
+            {product.category}
+          </p>
+        )}
         <p className="pt-0.5 font-sans text-xs font-semibold tracking-wider text-white">
           {product.price}
         </p>

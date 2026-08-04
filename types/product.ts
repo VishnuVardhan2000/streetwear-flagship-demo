@@ -7,12 +7,13 @@ export interface GalleryView {
 export interface Product {
   id: string;
   title: string;
-  material: string;
+  category?: string;
+  material?: string;
   price: string;
   numericPrice: number;
-  spec: string;
+  spec?: string;
   description: string;
-  fabricDetails: string;
+  fabricDetails?: string;
   image: string; // Core Hero Image
   galleryImages: GalleryView[]; // Real unique non-duplicated gallery slides
 }

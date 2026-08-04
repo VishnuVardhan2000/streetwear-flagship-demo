@@ -170,14 +170,11 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                 <div className="flex flex-col justify-center space-y-6 lg:col-span-5">
                   <div>
                     <span className="mb-2 block font-sans text-[10px] tracking-[0.3em] text-zinc-500 uppercase">
-                      FLIQ UNISEX // MASTER GARMENT
+                      FLIQ UNISEX // {product.category || 'COLLECTION'}
                     </span>
                     <h2 className="font-serif text-3xl font-light tracking-tight uppercase md:text-5xl">
                       {product.title}
                     </h2>
-                    <p className="mt-2 font-sans text-[11px] tracking-[0.2em] text-zinc-400 uppercase">
-                      {product.material}
-                    </p>
                     <p className="mt-3 font-sans text-2xl font-light tracking-wider text-zinc-100">
                       {product.price}
                     </p>
@@ -186,15 +183,6 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                   <p className="font-sans text-xs leading-relaxed tracking-widest text-zinc-400 uppercase">
                     {product.description}
                   </p>
-
-                  <div className="space-y-2 border-t border-b border-white/10 py-4">
-                    <span className="block font-sans text-[10px] tracking-[0.25em] text-zinc-500 uppercase">
-                      PRIMARY SPECIFICATION
-                    </span>
-                    <p className="font-sans text-[11px] tracking-wider text-zinc-300 uppercase">
-                      {product.spec}
-                    </p>
-                  </div>
 
                   {/* Size Selector */}
                   <div className="space-y-3">

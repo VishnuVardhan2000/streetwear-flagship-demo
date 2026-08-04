@@ -2,192 +2,293 @@ import { Product } from '@/types/product';
 
 export const APPAREL_PRODUCTS: Product[] = [
   {
-    id: '01',
-    title: 'OBSIDIAN OVERSIZED HOODIE',
-    material: 'Deep Black // Heavyweight French Terry',
-    price: '₹5,499',
-    numericPrice: 5499,
-    spec: '500GSM COTTON TERRY // STRUCTURED DROP SHOULDER',
-    description:
-      'Engineered from custom 500GSM French Terry cotton in deep obsidian black. Designed with a boxy monolithic silhouette, double-needle seam reinforcement, and subtle back collar tonal embroidery.',
-    fabricDetails:
-      'Combed 100% Organic Cotton French Terry. Pre-shrunk weave with heavyweight ribbing on cuffs and hem.',
-    image: '/images/products/fliq-look-01.jpg',
+    id: "01",
+    title: "FLIQ ARCHITECTURAL GRAPHIC TEE",
+    category: "T-Shirts",
+    price: "\u20b93,499",
+    numericPrice: 3499,
+    description: "Heavyweight organic cotton graphic tee featuring signature FLIQ typography and boxy drop-shoulder silhouette.",
+    image: "/images/catalogue/topwear/tshirts/Post1.jpeg",
     galleryImages: [
       {
-        url: '/images/products/fliq-look-01.jpg',
-        label: 'VIEW 01 // HERO PRESENTATION',
-        title: 'FULL GARMENT PRESENTATION',
+        url: "/images/catalogue/topwear/tshirts/Post1.jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "FRONT GRAPHIC PRESENCE"
       },
       {
-        url: '/images/products/hoodie_detail.jpg',
-        label: 'VIEW 02 // CRAFTSMANSHIP & STITCHING',
-        title: 'FLATLOCK SEAM & AGLET DETAIL',
+        url: "/images/catalogue/topwear/tshirts/Post1.1.jpeg",
+        label: "VIEW 02 // FRONT VIEW",
+        title: "FRONT SILHOUETTE & FIT"
       },
       {
-        url: '/images/products/hoodie_obsidian.jpg',
-        label: 'VIEW 03 // 500GSM FRENCH TERRY WEAVE',
-        title: 'FABRIC & FLEECE LOOP MACRO',
+        url: "/images/catalogue/topwear/tshirts/Post1.2.jpeg",
+        label: "VIEW 03 // EDITORIAL FIT",
+        title: "ON-BODY DRAPE"
       },
       {
-        url: '/images/products/hoodie_campaign.jpg',
-        label: 'VIEW 04 // EDITORIAL MODEL FIT',
-        title: 'ON-BODY EDITORIAL SILHOUETTE',
+        url: "/images/catalogue/topwear/tshirts/Post1.3.jpeg",
+        label: "VIEW 04 // DETAIL VIEW",
+        title: "COLLAR BINDING & EMBLEM"
       },
-    ],
+      {
+        url: "/images/catalogue/topwear/tshirts/Post1.4.jpeg",
+        label: "VIEW 05 // MODEL LOOKBOOK",
+        title: "EDITORIAL PRESENTATION"
+      }
+    ]
   },
   {
-    id: '02',
-    title: 'ECLIPSE BOMBER JACKET',
-    material: 'Graphite // Technical Matte Nylon',
-    price: '₹8,999',
-    numericPrice: 8999,
-    spec: 'TACTICAL SILHOUETTE // METALLIC EMBOSS',
-    description:
-      'Constructed with graphite technical matte nylon shell, thermoregulating fill, and heavy-duty matte chrome hardware. Features an oversized architectural cut.',
-    fabricDetails:
-      'Water-repellent 3-layer matte nylon shell with satin viscose lining and custom gunmetal zips.',
-    image: '/images/products/fliq-look-02.jpg',
+    id: "02",
+    title: "FLIQ SLATE STATEMENT TEE",
+    category: "T-Shirts",
+    price: "\u20b93,699",
+    numericPrice: 3699,
+    description: "Boxy oversized tee crafted in melange slate grey with high-density back artwork and dropped shoulder cut.",
+    image: "/images/catalogue/topwear/tshirts/Post 2.1.jpeg",
     galleryImages: [
       {
-        url: '/images/products/fliq-look-02.jpg',
-        label: 'VIEW 01 // HERO PRESENTATION',
-        title: 'TACTICAL BOMBER SILHOUETTE',
+        url: "/images/catalogue/topwear/tshirts/Post 2.1.jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "SLATE MELANGE SILHOUETTE"
       },
       {
-        url: '/images/products/bomber_detail.jpg',
-        label: 'VIEW 02 // TECHNICAL ZIPPER & HARDWARE',
-        title: 'YKK TWO-WAY GUNMETAL ZIPPER',
+        url: "/images/catalogue/topwear/tshirts/Post 2.2.jpeg",
+        label: "VIEW 02 // BACK GRAPHIC",
+        title: "BACK STATEMENT ARTWORK"
       },
       {
-        url: '/images/products/bomber_jacket.jpg',
-        label: 'VIEW 03 // 3-LAYER MATTE NYLON SHELL',
-        title: 'WATER-REPELLENT NYLON TEXTURE',
+        url: "/images/catalogue/topwear/tshirts/Post 2.3.jpeg",
+        label: "VIEW 03 // BACK VIEW",
+        title: "BACK GRAPHIC FOCUS"
       },
       {
-        url: '/images/products/bomber_campaign.jpg',
-        label: 'VIEW 04 // EDITORIAL MODEL FIT',
-        title: 'ON-BODY VOLUME CAMPAIGN',
+        url: "/images/catalogue/topwear/tshirts/Post 2.3.1.jpeg",
+        label: "VIEW 04 // FRONT VIEW",
+        title: "FRONT CHEST LOGO"
       },
-    ],
+      {
+        url: "/images/catalogue/topwear/tshirts/Post 2.4.jpeg",
+        label: "VIEW 05 // BACK GRAPHIC",
+        title: "GRAPHIC TYPOGRAPHY"
+      },
+      {
+        url: "/images/catalogue/topwear/tshirts/Post 2.extra.jpeg",
+        label: "VIEW 06 // FABRIC DETAIL",
+        title: "SEAM & WEAVE CLOSE-UP"
+      }
+    ]
   },
   {
-    id: '03',
-    title: 'MONOLITH HEAVYWEIGHT TEE',
-    material: 'Off-White // 300GSM Organic Cotton',
-    price: '₹3,299',
+    id: "03",
+    title: "FLIQ MINIMALIST DROP TEE",
+    category: "T-Shirts",
+    price: "\u20b93,299",
     numericPrice: 3299,
-    spec: '300GSM COMBED COTTON // DROP SHOULDER SILHOUETTE',
-    description:
-      'Ultra-heavyweight minimalist jersey tee in natural off-white cream with a dense collar bind, drop shoulder construction, and wide sleeve opening.',
-    fabricDetails:
-      '300GSM Ring-spun Organic Cotton. High-density weave engineered for structured draping.',
-    image: '/images/products/fliq-look-03.jpg',
+    description: "Minimalist heavy cotton jersey tee engineered for effortless draping and clean urban aesthetic.",
+    image: "/images/catalogue/topwear/tshirts/WhatsApp Image 2026-07-31 at 5.02.43 AM (10).jpeg",
     galleryImages: [
       {
-        url: '/images/products/fliq-look-03.jpg',
-        label: 'VIEW 01 // HERO PRESENTATION',
-        title: 'MINIMALIST JERSEY TEE PRESENTATION',
+        url: "/images/catalogue/topwear/tshirts/WhatsApp Image 2026-07-31 at 5.02.43 AM (10).jpeg",
+        label: "VIEW 01 // MODEL FIT",
+        title: "ON-BODY EDITORIAL LOOK"
       },
       {
-        url: '/images/products/tee_detail.jpg',
-        label: 'VIEW 02 // 30MM COLLAR BINDING & EMBLEM',
-        title: 'CRAFTSMANSHIP & HEM MICRO-EMBLEM',
+        url: "/images/catalogue/topwear/tshirts/WhatsApp Image 2026-07-31 at 5.02.43 AM (11).jpeg",
+        label: "VIEW 02 // BACK VIEW",
+        title: "BACK SILHOUETTE"
       },
       {
-        url: '/images/products/tee_campaign.jpg',
-        label: 'VIEW 03 // EDITORIAL MODEL FIT',
-        title: 'ON-BODY DROP SHOULDER DRAPING',
-      },
-    ],
+        url: "/images/catalogue/topwear/tshirts/WhatsApp Image 2026-07-31 at 5.02.43 AM (12).jpeg",
+        label: "VIEW 03 // MODEL LOOK",
+        title: "EDITORIAL STYLING"
+      }
+    ]
   },
   {
-    id: '04',
-    title: 'PHANTOM CARGO PANTS',
-    material: 'Olive // Structured Ripstop Twill',
-    price: '₹6,499',
-    numericPrice: 6499,
-    spec: '3D GUSSETED POCKETS // ADJUSTABLE ANKLE TAB',
-    description:
-      'Relaxed-fit tactical cargo trousers constructed from heavy olive cotton ripstop twill. Features deep gusseted pockets and matte black hardware.',
-    fabricDetails: '380GSM Heavy Cotton Ripstop Twill with reinforced knee articulation.',
-    image: '/images/products/fliq-look-04.jpg',
+    id: "04",
+    title: "FLIQ MONOLITHIC HEAVY HOODIE",
+    category: "Hoodies",
+    price: "\u20b95,999",
+    numericPrice: 5999,
+    description: "Structured oversized hoodie with double-layer hood, deep side ribbing, and monolithic drop-shoulder drape.",
+    image: "/images/catalogue/topwear/hoodies/hoddie 1.jpeg",
     galleryImages: [
       {
-        url: '/images/products/fliq-look-04.jpg',
-        label: 'VIEW 01 // HERO PRESENTATION',
-        title: 'TACTICAL CARGO TROUSER PRESENTATION',
+        url: "/images/catalogue/topwear/hoodies/hoddie 1.jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "OBSIDIAN HOODIE FRONT"
       },
       {
-        url: '/images/products/cargo_detail.jpg',
-        label: 'VIEW 02 // 3D GUSSETED POCKETS & RIPSTOP',
-        title: 'POCKET ARCHITECTURE & KNEE PANELING',
+        url: "/images/catalogue/topwear/hoodies/hoddie1.2.jpeg",
+        label: "VIEW 02 // FRONT FIT",
+        title: "DROPPED SHOULDER FIT"
       },
       {
-        url: '/images/products/cargo_campaign.jpg',
-        label: 'VIEW 03 // EDITORIAL MODEL FIT',
-        title: 'ON-BODY ARTICULATED STRAIGHT FIT',
+        url: "/images/catalogue/topwear/hoodies/hoddie 2.jpeg",
+        label: "VIEW 03 // BACK VIEW",
+        title: "CREAM BACK HOOD DETAIL"
       },
-    ],
+      {
+        url: "/images/catalogue/topwear/hoodies/hoddie 3.jpeg",
+        label: "VIEW 04 // FLEECE DETAIL",
+        title: "LOOP FLEECE & RIBBING"
+      }
+    ]
   },
   {
-    id: '05',
-    title: 'CONCRETE DENIM JEANS',
-    material: 'Dark Indigo // 14oz Rigid Denim',
-    price: '₹7,299',
-    numericPrice: 7299,
-    spec: '14OZ RAW DENIM // STRAIGHT MONOLITHIC FIT',
-    description:
-      'Heavyweight rigid selvedge denim jeans in dark indigo featuring custom nickel hardware, raw stone wash finish, and a straight architectural leg.',
-    fabricDetails:
-      '14oz 100% Cotton Rigid Selvedge Denim with custom embossed leather waistband patch.',
-    image: '/images/products/fliq-look-05.jpg',
+    id: "05",
+    title: "FLIQ TERRA EARTH HOODIE",
+    category: "Hoodies",
+    price: "\u20b95,499",
+    numericPrice: 5499,
+    description: "Oversized earth-tone fleece hoodie styled for utility and warmth in a relaxed monolithic fit.",
+    image: "/images/catalogue/topwear/hoodies/WhatsApp Image 2026-07-30 at 2.11.58 AM.jpeg",
     galleryImages: [
       {
-        url: '/images/products/fliq-look-05.jpg',
-        label: 'VIEW 01 // HERO PRESENTATION',
-        title: 'RIGID SELVEDGE DENIM PRESENTATION',
+        url: "/images/catalogue/topwear/hoodies/WhatsApp Image 2026-07-30 at 2.11.58 AM.jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "TERRA RUST FRONT"
       },
       {
-        url: '/images/products/denim_detail.jpg',
-        label: 'VIEW 02 // RED SELVEDGE ID & LEATHER PATCH',
-        title: 'SEAM ID & EMBOSSED LEATHER PATCH',
+        url: "/images/catalogue/topwear/hoodies/WhatsApp Image 2026-07-30 at 2.11.59 AM.jpeg",
+        label: "VIEW 02 // FRONT VIEW",
+        title: "HOOD & POCKET FIT"
       },
       {
-        url: '/images/products/denim_campaign.jpg',
-        label: 'VIEW 03 // EDITORIAL MODEL FIT',
-        title: 'ON-BODY MONOLITHIC DENIM FIT',
-      },
-    ],
+        url: "/images/catalogue/topwear/hoodies/WhatsApp Image 2026-07-30 at 2.12.00 AM.jpeg",
+        label: "VIEW 03 // MODEL LOOK",
+        title: "EDITORIAL SILHOUETTE"
+      }
+    ]
   },
   {
-    id: '06',
-    title: 'SHADOW UTILITY JACKET',
-    material: 'Charcoal // Hydrophobic Tech-Canvas',
-    price: '₹9,499',
-    numericPrice: 9499,
-    spec: 'WATER-RESISTANT // MODULAR ZIP POCKETS',
-    description:
-      'Functional outerwear jacket in dark charcoal tech-canvas featuring modular zip utility pockets, articulated elbows, and an asymmetrical storm flap closure.',
-    fabricDetails:
-      'Hydrophobic tech-canvas with bonded seam tape and weatherproof YKK Aquaguard zips.',
-    image: '/images/products/fliq-look-06.jpg',
+    id: "06",
+    title: "FLIQ ARCHITECTURAL BOMBER JACKET",
+    category: "Jackets",
+    price: "\u20b98,999",
+    numericPrice: 8999,
+    description: "Structured outerwear jacket featuring matte technical shell, structured shoulder volume, and gunmetal zippers.",
+    image: "/images/catalogue/topwear/jackets/WhatsApp Image 2026-07-31 at 5.02.43 AM (13).jpeg",
     galleryImages: [
       {
-        url: '/images/products/fliq-look-06.jpg',
-        label: 'VIEW 01 // HERO PRESENTATION',
-        title: 'HYDROPHOBIC UTILITY JACKET',
+        url: "/images/catalogue/topwear/jackets/WhatsApp Image 2026-07-31 at 5.02.43 AM (13).jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "EDITORIAL FRONT FIT"
       },
       {
-        url: '/images/products/utility_detail.jpg',
-        label: 'VIEW 02 // AQUAGUARD ZIP & TECH-CANVAS',
-        title: 'WEATHERPROOF HARDWARE & POCKETS',
+        url: "/images/catalogue/topwear/jackets/WhatsApp Image 2026-07-31 at 5.02.43 AM (14).jpeg",
+        label: "VIEW 02 // MODEL LOOK",
+        title: "ON-BODY STYLING"
       },
       {
-        url: '/images/products/utility_campaign.jpg',
-        label: 'VIEW 03 // EDITORIAL MODEL FIT',
-        title: 'ON-BODY HIGH-NECK OUTDOOR FIT',
-      },
-    ],
+        url: "/images/catalogue/topwear/jackets/WhatsApp Image 2026-07-31 at 5.02.43 AM (5).jpeg",
+        label: "VIEW 03 // BACK VIEW",
+        title: "ARCHITECTURAL BACK CUT"
+      }
+    ]
   },
+  {
+    id: "07",
+    title: "FLIQ WIDE-LEG VINTAGE JEANS",
+    category: "Jeans",
+    price: "\u20b94,999",
+    numericPrice: 4999,
+    description: "Heavyweight washed denim trousers designed with a wide straight leg cut and custom metal rivet hardware.",
+    image: "/images/catalogue/bottomwear/jeans/WhatsApp Image 2026-07-31 at 5.02.43 AM (10).jpeg",
+    galleryImages: [
+      {
+        url: "/images/catalogue/bottomwear/jeans/WhatsApp Image 2026-07-31 at 5.02.43 AM (10).jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "FRONT WIDE-LEG FIT"
+      },
+      {
+        url: "/images/catalogue/bottomwear/jeans/WhatsApp Image 2026-07-31 at 5.02.43 AM (11).jpeg",
+        label: "VIEW 02 // BACK VIEW",
+        title: "BACK POCKET DETAIL"
+      },
+      {
+        url: "/images/catalogue/bottomwear/jeans/WhatsApp Image 2026-07-31 at 5.02.43 AM (12).jpeg",
+        label: "VIEW 03 // MODEL LOOK",
+        title: "EDITORIAL LEG DRAPE"
+      }
+    ]
+  },
+  {
+    id: "08",
+    title: "FLIQ TACTICAL UTILITY CARGOS",
+    category: "Cargos",
+    price: "\u20b94,499",
+    numericPrice: 4499,
+    description: "Relaxed utility cargo pants with multi-pocket side storage, reinforced knee seams, and adjustable hem.",
+    image: "/images/catalogue/bottomwear/cargos/WhatsApp Image 2026-07-31 at 5.02.44 AM (1).jpeg",
+    galleryImages: [
+      {
+        url: "/images/catalogue/bottomwear/cargos/WhatsApp Image 2026-07-31 at 5.02.44 AM (1).jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "TACTICAL CARGO FIT"
+      },
+      {
+        url: "/images/catalogue/bottomwear/cargos/WhatsApp Image 2026-07-31 at 5.02.44 AM (4).jpeg",
+        label: "VIEW 02 // SIDE POCKET",
+        title: "UTILITY POCKET FOCUS"
+      },
+      {
+        url: "/images/catalogue/bottomwear/cargos/WhatsApp Image 2026-07-31 at 5.02.44 AM (5).jpeg",
+        label: "VIEW 03 // MODEL LOOK",
+        title: "EDITORIAL UTILITY LOOK"
+      }
+    ]
+  },
+  {
+    id: "09",
+    title: "FLIQ HEAVYWEIGHT FLEECE SWEATPANTS",
+    category: "Sweat Pants",
+    price: "\u20b93,999",
+    numericPrice: 3999,
+    description: "Heavy fleece lounge sweatpants featuring elastic drawstring waistband, tapered cuffs, and deep side pockets.",
+    image: "/images/catalogue/bottomwear/sweat-pants/WhatsApp Image 2026-07-30 at 2.12.13 AM.jpeg",
+    galleryImages: [
+      {
+        url: "/images/catalogue/bottomwear/sweat-pants/WhatsApp Image 2026-07-30 at 2.12.13 AM.jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "FRONT SWEATPANT FIT"
+      },
+      {
+        url: "/images/catalogue/bottomwear/sweat-pants/WhatsApp Image 2026-07-30 at 2.12.12 AM (1).jpeg",
+        label: "VIEW 02 // MODEL FIT",
+        title: "TAPERED CUFF DRAPE"
+      },
+      {
+        url: "/images/catalogue/bottomwear/sweat-pants/WhatsApp Image 2026-07-30 at 2.12.12 AM.jpeg",
+        label: "VIEW 03 // DETAIL VIEW",
+        title: "DRAWSTRING & WAISTBAND"
+      }
+    ]
+  },
+  {
+    id: "10",
+    title: "FLIQ KOREAN PLEATED TROUSERS",
+    category: "Korean Pants",
+    price: "\u20b94,299",
+    numericPrice: 4299,
+    description: "Fluid architectural trousers with double-pleated waist and cropped wide-leg drape for modern minimalist styling.",
+    image: "/images/catalogue/bottomwear/korean-pants/WhatsApp Image 2026-07-31 at 5.02.44 AM (16).jpeg",
+    galleryImages: [
+      {
+        url: "/images/catalogue/bottomwear/korean-pants/WhatsApp Image 2026-07-31 at 5.02.44 AM (16).jpeg",
+        label: "VIEW 01 // HERO PRESENTATION",
+        title: "PLEATED CHARCOAL DRAPE"
+      },
+      {
+        url: "/images/catalogue/bottomwear/korean-pants/WhatsApp Image 2026-07-31 at 5.02.44 AM (17).jpeg",
+        label: "VIEW 02 // BACK VIEW",
+        title: "TERRA BACK DRAPE"
+      },
+      {
+        url: "/images/catalogue/bottomwear/korean-pants/WhatsApp Image 2026-07-31 at 5.02.44 AM (18).jpeg",
+        label: "VIEW 03 // MODEL FIT",
+        title: "WIDE LEGS SILHOUETTE"
+      }
+    ]
+  }
 ];

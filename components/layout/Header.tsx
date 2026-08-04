@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingBag } from 'lucide-react';
+import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 
 export default function Header() {
@@ -40,9 +41,16 @@ export default function Header() {
         {/* Brand Logo */}
         <a
           href="#"
-          className="font-sans text-2xl font-bold tracking-[0.35em] text-white transition-opacity hover:opacity-80"
+          className="flex items-center transition-opacity hover:opacity-80"
         >
-          FLIQ
+          <Image
+            src="/images/branding/fliq-logo-transparent-p2.png"
+            alt="FLIQ Unisex Clothing"
+            width={120}
+            height={40}
+            className="h-7 w-auto object-contain brightness-200 contrast-125"
+            priority
+          />
         </a>
 
         {/* Desktop Navigation & Bag */}

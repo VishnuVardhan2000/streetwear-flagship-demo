@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function Footer() {
   const navLinks = [
     { name: 'COLLECTION', href: '#collection' },
@@ -17,7 +19,13 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col space-y-12 md:flex-row md:items-center md:justify-between md:space-y-0">
         {/* Brand, Location & Copyright */}
         <div className="flex flex-col space-y-3">
-          <span className="font-sans text-xl font-bold tracking-[0.35em] text-white">FLIQ</span>
+          <Image
+            src="/images/branding/fliq-logo-transparent-p2.png"
+            alt="FLIQ Unisex Clothing"
+            width={140}
+            height={45}
+            className="h-8 w-auto object-contain brightness-200 contrast-125"
+          />
           <p className="font-sans text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
             FLAGSHIP // MADHAPUR, HYDERABAD (OPPOSITE GOWRA FOUNTAINHEAD)
           </p>
