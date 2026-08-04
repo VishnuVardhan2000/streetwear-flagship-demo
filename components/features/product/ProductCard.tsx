@@ -1,10 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { Product } from '@/types/product';
 import { useCart } from '@/context/CartContext';
-import { Eye, ShoppingBag } from 'lucide-react';
+import { Eye, ShoppingBag, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -13,10 +14,48 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onClick }: ProductCardProps) {
   const { addToCart } = useCart();
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
-  if (product.id === '01') {
-    console.log('[LIVE UI DATA] Rendering Product Card #1:', product.title, product.image);
-  }
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const gallery = product.galleryImages && product.galleryImages.length > 0
+    ? product.galleryImages
+    : [{ title: product.title, url: product.image, label: 'Hero' }];
+
+  const totalImages = gallery.length;
+  const currentImage = gallery[currentImgIndex]?.url || product.image;
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev - 1 + totalImages) % totalImages);
+  };
+
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev + 1) % totalImages);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (e.touches[0]) touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches[0]) touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 35) {
+      // Swiped Left -> Next Image
+      e.stopPropagation();
+      setCurrentImgIndex((prev) => (prev + 1) % totalImages);
+    } else if (diff < -35) {
+      // Swiped Right -> Prev Image
+      e.stopPropagation();
+      setCurrentImgIndex((prev) => (prev - 1 + totalImages) % totalImages);
+    }
+  };
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -25,7 +64,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       title: product.title,
       price: product.price,
       numericPrice: product.numericPrice,
-      image: product.image,
+      image: currentImage,
       size: 'M',
     });
   };
@@ -35,22 +74,73 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       onClick={() => onClick(product)}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-      className="group flex cursor-pointer flex-col space-y-4"
+      className="group flex cursor-pointer flex-col space-y-4 select-none"
     >
-      {/* Product Image Container with Floating Luxury Glass Bar */}
-      <div className="relative aspect-[3/4] w-full overflow-hidden border border-white/10 bg-zinc-950 shadow-xl ring-1 ring-inset ring-white/5 transition-all duration-300 group-hover:border-white/30 group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.95)]">
-        <Image
-          src={product.image}
-          alt={product.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-opacity duration-300"
-          priority={product.id === '01' || product.id === '02'}
-        />
+      {/* Product Image Container with Direct In-Card Gallery Navigation */}
+      <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        className="relative aspect-[3/4] w-full overflow-hidden border border-white/10 bg-zinc-950 shadow-xl ring-1 ring-inset ring-white/5 transition-all duration-300 group-hover:border-white/30 group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.95)]"
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentImage}
+            initial={{ opacity: 0.7 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.7 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="relative h-full w-full"
+          >
+            <Image
+              src={currentImage}
+              alt={`${product.title} view ${currentImgIndex + 1}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+              priority={product.id === '01' && currentImgIndex === 0}
+            />
+          </motion.div>
+        </AnimatePresence>
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
 
-        {/* Floating Glass Action Bar (Reveals on Hover) */}
-        <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center gap-2 rounded-xl border border-white/20 bg-zinc-950/85 p-2 backdrop-blur-2xl shadow-2xl opacity-0 translate-y-2 transition-all duration-250 ease-out group-hover:opacity-100 group-hover:translate-y-0">
+        {/* Task 5: Desktop Direct In-Card Gallery Prev/Next Arrow Controls */}
+        {totalImages > 1 && (
+          <div className="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <button
+              onClick={handlePrevImage}
+              className="rounded-full border border-white/20 bg-zinc-950/70 p-2 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black"
+              aria-label="Previous card image preview"
+            >
+              <ChevronLeft size={14} />
+            </button>
+            <button
+              onClick={handleNextImage}
+              className="rounded-full border border-white/20 bg-zinc-950/70 p-2 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black"
+              aria-label="Next card image preview"
+            >
+              <ChevronRight size={14} />
+            </button>
+          </div>
+        )}
+
+        {/* Gallery Image Indicator Dots */}
+        {totalImages > 1 && (
+          <div className="absolute top-3 right-3 z-10 flex items-center space-x-1.5 rounded-full border border-white/15 bg-zinc-950/60 px-2 py-1 backdrop-blur-md">
+            {gallery.map((_, idx) => (
+              <span
+                key={idx}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  currentImgIndex === idx ? 'w-4 bg-white' : 'w-1.5 bg-zinc-500'
+                }`}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Floating Glass Action Bar */}
+        <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center gap-2 rounded-xl border border-white/20 bg-zinc-950/85 p-2 backdrop-blur-2xl shadow-2xl opacity-0 translate-y-2 transition-all duration-250 ease-out group-hover:opacity-100 group-hover:translate-y-0">
           <button
             onClick={() => onClick(product)}
             className="flex flex-1 items-center justify-center space-x-1.5 rounded-lg bg-white/10 py-2 text-center font-sans text-[10px] font-semibold tracking-[0.18em] text-white uppercase transition-colors hover:bg-white/25"
