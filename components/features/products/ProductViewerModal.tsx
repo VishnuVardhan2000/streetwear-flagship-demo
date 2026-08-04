@@ -59,7 +59,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
       else prevSlide();
       setTimeout(() => {
         wheelLock.current = false;
-      }, 550);
+      }, 400);
     }
   };
 
@@ -99,13 +99,17 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
   const currentView = slides[currentSlide];
   if (!currentView) return null;
 
+  // Adjacent slide preloading targets
+  const nextSlideIdx = (currentSlide + 1) % slidesCount;
+  const prevSlideIdx = (currentSlide - 1 + slidesCount) % slidesCount;
+
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
         role="dialog"
         aria-modal="true"
         aria-label={`${product.title} product gallery`}
@@ -115,10 +119,16 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Top Header Navigation Bar */}
-        <div className="absolute inset-x-0 top-0 z-30 flex items-center justify-between border-b border-white/10 bg-black/60 px-6 py-6 backdrop-blur-md md:px-12">
+        {/* Invisible Image Preloader for Zero-Latency Gallery Navigation */}
+        <div className="hidden">
+          {slides[nextSlideIdx] && <Image src={slides[nextSlideIdx].url} alt="preload next" width={100} height={100} priority />}
+          {slides[prevSlideIdx] && <Image src={slides[prevSlideIdx].url} alt="preload prev" width={100} height={100} priority />}
+        </div>
+
+        {/* Top Floating Glass Header Bar */}
+        <div className="absolute inset-x-0 top-0 z-30 flex items-center justify-between border-b border-white/12 bg-zinc-950/70 px-6 py-5 backdrop-blur-2xl ring-1 ring-inset ring-white/10 shadow-2xl md:px-12">
           <div className="flex items-center space-x-4">
-            <span className="font-sans text-[10px] tracking-[0.3em] text-zinc-400 uppercase">
+            <span className="font-sans text-[10px] tracking-[0.3em] text-zinc-400 uppercase font-medium">
               {currentView.label}
             </span>
             <span className="h-1 w-1 rounded-full bg-zinc-600" />
@@ -128,15 +138,15 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
           </div>
 
           <div className="flex items-center space-x-6">
-            <span className="font-sans text-xs font-light tracking-wider text-zinc-300">
+            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-[10px] tracking-widest text-zinc-300">
               {currentSlide + 1} / {slidesCount}
             </span>
             <button
               onClick={onClose}
-              className="p-2 text-zinc-400 transition-colors hover:text-white"
+              className="rounded-full border border-white/10 bg-white/5 p-2 text-zinc-400 transition-all hover:border-white/30 hover:bg-white hover:text-black"
               aria-label="Close product viewer"
             >
-              <X size={24} />
+              <X size={20} />
             </button>
           </div>
         </div>
@@ -148,14 +158,14 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
             {currentSlide === 0 ? (
               <motion.div
                 key="slide-0"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.45, ease: 'easeInOut' }}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="grid h-full w-full max-w-7xl grid-cols-1 items-center gap-8 px-6 md:px-12 lg:grid-cols-12"
               >
-                {/* Hero Garment Image */}
-                <div className="relative h-[55vh] w-full overflow-hidden border border-white/10 bg-zinc-900 lg:col-span-7 lg:h-[75vh]">
+                {/* Hero Garment Image Container */}
+                <div className="relative h-[50vh] w-full overflow-hidden border border-white/12 bg-zinc-950 shadow-2xl ring-1 ring-inset ring-white/10 lg:col-span-7 lg:h-[75vh]">
                   <Image
                     src={currentView.url}
                     alt={product.title}
@@ -163,7 +173,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60" />
                 </div>
 
                 {/* Product Specification & Purchase Panel */}
@@ -194,10 +204,10 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
-                          className={`h-11 w-11 border text-xs font-semibold tracking-wider transition-all ${
+                          className={`h-11 w-11 rounded-lg border text-xs font-semibold tracking-wider transition-all ${
                             selectedSize === size
-                              ? 'border-white bg-white text-black'
-                              : 'border-white/20 bg-transparent text-white hover:border-white/50'
+                              ? 'border-white bg-white text-black shadow-lg scale-105'
+                              : 'border-white/20 bg-zinc-900/60 text-zinc-300 hover:border-white/50 hover:text-white'
                           }`}
                         >
                           {size}
@@ -209,7 +219,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                   {/* Add to Bag CTA */}
                   <button
                     onClick={handleAddToCart}
-                    className="flex w-full items-center justify-center space-x-3 bg-white py-4 font-sans text-xs font-semibold tracking-[0.3em] text-black uppercase transition-all duration-300 hover:bg-zinc-200 active:scale-[0.99]"
+                    className="flex w-full items-center justify-center space-x-3 rounded-xl bg-white py-4 font-sans text-xs font-semibold tracking-[0.3em] text-black uppercase transition-all duration-200 hover:bg-zinc-200 active:scale-[0.99] shadow-2xl"
                   >
                     {added ? (
                       <>
@@ -229,39 +239,37 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
               /* DYNAMIC UNIQUE GALLERY VIEWS (SLIDES > 0) */
               <motion.div
                 key={`slide-${currentSlide}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.45, ease: 'easeInOut' }}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="relative flex h-[75vh] w-full max-w-6xl flex-col items-center justify-center px-6 md:px-12"
               >
                 <div
                   onClick={() => setIsZoomed(!isZoomed)}
-                  className={`group relative h-full w-full cursor-zoom-in overflow-hidden border border-white/10 bg-zinc-900 transition-all duration-500 ${
-                    isZoomed ? 'scale-105' : 'scale-100'
-                  }`}
+                  className="group relative h-full w-full cursor-zoom-in overflow-hidden border border-white/12 bg-zinc-950 shadow-2xl ring-1 ring-inset ring-white/10"
                 >
                   <Image
                     src={currentView.url}
                     alt={`${product.title} - ${currentView.title}`}
                     fill
-                    className={`object-cover transition-transform duration-700 ${
-                      isZoomed ? 'scale-150' : 'group-hover:scale-105'
+                    className={`object-cover transition-transform duration-500 ${
+                      isZoomed ? 'scale-150' : 'scale-100'
                     }`}
                   />
-                  <div className="absolute top-6 left-6 z-10 flex items-center space-x-2 border border-white/15 bg-black/70 px-5 py-3 backdrop-blur-md">
+                  <div className="absolute top-6 left-6 z-10 flex items-center space-x-2 rounded-full border border-white/20 bg-zinc-950/80 px-4 py-2 backdrop-blur-xl shadow-xl">
                     <ZoomIn size={14} className="text-white" />
-                    <span className="block font-sans text-[10px] tracking-[0.25em] text-zinc-400 uppercase">
+                    <span className="block font-sans text-[10px] tracking-[0.25em] text-zinc-300 uppercase font-medium">
                       {currentView.label}
                     </span>
                   </div>
 
-                  <div className="absolute right-6 bottom-6 left-6 z-10 max-w-xl border border-white/10 bg-black/85 p-6 backdrop-blur-md">
+                  <div className="absolute right-6 bottom-6 left-6 z-10 max-w-xl rounded-2xl border border-white/15 bg-zinc-950/85 p-6 backdrop-blur-2xl shadow-2xl ring-1 ring-inset ring-white/10">
                     <h4 className="font-serif text-xl font-light tracking-wide uppercase">
                       {currentView.title}
                     </h4>
                     <p className="mt-2 font-sans text-xs leading-relaxed tracking-widest text-zinc-400 uppercase">
-                      {product.fabricDetails}
+                      {product.description}
                     </p>
                   </div>
                 </div>
@@ -270,12 +278,12 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
           </AnimatePresence>
         </div>
 
-        {/* Previous View Arrow */}
+        {/* Left / Right Chevron Arrow Controls */}
         {slidesCount > 1 && (
           <>
             <button
               onClick={prevSlide}
-              className="absolute top-1/2 left-4 z-40 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-4 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black md:left-8"
+              className="absolute top-1/2 left-4 z-40 -translate-y-1/2 rounded-full border border-white/20 bg-zinc-950/70 p-3.5 text-white backdrop-blur-xl transition-all duration-200 hover:border-white hover:bg-white hover:text-black shadow-2xl md:left-8"
               aria-label="Previous view"
             >
               <ChevronLeft size={20} />
@@ -283,7 +291,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
 
             <button
               onClick={nextSlide}
-              className="absolute top-1/2 right-4 z-40 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-4 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black md:right-8"
+              className="absolute top-1/2 right-4 z-40 -translate-y-1/2 rounded-full border border-white/20 bg-zinc-950/70 p-3.5 text-white backdrop-blur-xl transition-all duration-200 hover:border-white hover:bg-white hover:text-black shadow-2xl md:right-8"
               aria-label="Next view"
             >
               <ChevronRight size={20} />
@@ -293,7 +301,7 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
 
         {/* Slide Indicator Dots */}
         {slidesCount > 1 && (
-          <div className="absolute inset-x-0 bottom-6 z-30 flex items-center justify-center space-x-3">
+          <div className="absolute inset-x-0 bottom-6 z-30 flex items-center justify-center space-x-2.5">
             {slides.map((_, idx) => (
               <button
                 key={idx}
@@ -302,7 +310,9 @@ export default function ProductViewerModal({ product, onClose }: ProductViewerPr
                   setIsZoomed(false);
                 }}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  currentSlide === idx ? 'w-8 bg-white' : 'w-2 bg-zinc-600 hover:bg-zinc-400'
+                  currentSlide === idx
+                    ? 'w-8 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]'
+                    : 'w-2 bg-zinc-600 hover:bg-zinc-400'
                 }`}
                 aria-label={`Go to view ${idx + 1}`}
               />

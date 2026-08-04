@@ -31,9 +31,9 @@ export default function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'border-b border-white/10 bg-black/80 py-4 backdrop-blur-md'
+          ? 'border-b border-white/12 bg-zinc-950/75 py-4 backdrop-blur-2xl ring-1 ring-inset ring-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.8)]'
           : 'bg-transparent py-6'
       }`}
     >
