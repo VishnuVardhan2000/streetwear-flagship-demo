@@ -10,6 +10,10 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onClick }: ProductCardProps) {
+  if (product.id === '01') {
+    console.log('[LIVE UI DATA] Rendering Product Card #1:', product.title, product.image);
+  }
+
   return (
     <motion.div
       onClick={() => onClick(product)}
