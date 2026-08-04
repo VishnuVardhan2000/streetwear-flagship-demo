@@ -18,6 +18,7 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://streetwear-flagship-demo.vercel.app'),
   title: 'FLIQ // Monolithic Architectural Luxury Streetwear',
   description:
     'FLIQ Unisex Clothing Flagship. Monolithic silhouettes, 500GSM French Terry, 14oz selvedge denim, and tactical urban utility wear from Madhapur, Hyderabad.',
