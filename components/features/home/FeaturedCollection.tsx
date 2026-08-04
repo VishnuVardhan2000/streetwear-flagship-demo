@@ -79,55 +79,58 @@ export default function FeaturedCollection() {
   return (
     <section
       id="collection"
-      className="relative w-full border-t border-white/10 bg-black px-6 py-32 text-white md:px-12"
+      className="relative w-full border-t border-white/10 bg-black px-4 py-28 text-white sm:px-6 md:px-12 md:py-32"
     >
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-12 flex flex-col justify-between space-y-4 md:flex-row md:items-end md:space-y-0">
+        <div className="mb-10 flex flex-col justify-between space-y-4 md:mb-12 md:flex-row md:items-end md:space-y-0">
           <div>
             <span className="mb-2 block font-sans text-[10px] tracking-[0.3em] text-zinc-500 uppercase">
               OFFICIAL CATALOGUE
             </span>
-            <h2 className="font-serif text-4xl font-light tracking-tight uppercase md:text-6xl">
+            <h2 className="font-serif text-3xl font-light tracking-tight uppercase sm:text-4xl md:text-6xl">
               APPAREL COLLECTION
             </h2>
           </div>
-          <p className="max-w-xs font-sans text-xs leading-relaxed font-light tracking-[0.2em] text-zinc-400 uppercase">
+          <p className="max-w-xs font-sans text-[11px] leading-relaxed font-light tracking-[0.2em] text-zinc-400 uppercase sm:text-xs">
             AUTHENTIC GARMENT SILHOUETTES FROM DROP 01.
           </p>
         </div>
 
-        {/* 2-Level Premium Glass Navigation Container */}
-        <div className="mb-14 flex flex-col space-y-6">
-          {/* Level 1: Parent Categories (Capsule Glass Navigation) */}
-          <div className="flex justify-start">
-            <div className="inline-flex flex-wrap items-center gap-1 rounded-full border border-white/10 bg-zinc-950/80 p-1.5 backdrop-blur-xl shadow-2xl">
-              {(['ALL', 'TOP WEAR', 'BOTTOM WEAR'] as ParentCategory[]).map((parent) => (
-                <button
-                  key={parent}
-                  onClick={() => handleParentClick(parent)}
-                  className={`relative rounded-full px-5 py-2.5 font-sans text-xs tracking-[0.2em] font-medium uppercase transition-all duration-300 ${
-                    activeParent === parent
-                      ? 'bg-white text-black shadow-md font-semibold'
-                      : 'text-zinc-400 hover:bg-white/5 hover:text-white'
-                  }`}
-                >
-                  {parent}
-                </button>
-              ))}
+        {/* 2-Level Floating Luxury Glass Navigation */}
+        <div className="mb-12 flex flex-col space-y-4 sm:mb-14 sm:space-y-5">
+          {/* Level 1: Parent Categories (Floating Glass Capsule) */}
+          <div className="flex justify-start max-w-full">
+            <div className="inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border border-white/15 bg-zinc-950/70 p-1.5 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.8)] ring-1 ring-inset ring-white/10 transition-all duration-300">
+              {(['ALL', 'TOP WEAR', 'BOTTOM WEAR'] as ParentCategory[]).map((parent) => {
+                const isActive = activeParent === parent;
+                return (
+                  <button
+                    key={parent}
+                    onClick={() => handleParentClick(parent)}
+                    className={`relative rounded-full px-3.5 py-2 font-sans text-[11px] font-medium tracking-[0.18em] uppercase transition-all duration-300 sm:px-5 sm:py-2.5 sm:text-xs ${
+                      isActive
+                        ? 'border border-white bg-white text-black font-semibold shadow-[0_0_20px_rgba(255,255,255,0.25)] scale-[1.02]'
+                        : 'border border-transparent text-zinc-400 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    {parent}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* Level 2: Sub-Categories (Animated Fade In / Out) */}
+          {/* Level 2: Sub-Categories (Soft Subtle Fade In) */}
           <AnimatePresence mode="wait">
             {activeSubCategories.length > 0 && (
               <motion.div
                 key={activeParent}
-                initial={{ opacity: 0, y: 6 }}
+                initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-wrap items-center gap-2 pt-2 sm:gap-3"
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="flex max-w-full flex-wrap items-center gap-1.5 pt-1 sm:gap-2.5"
               >
                 {activeSubCategories.map((sub) => {
                   const isActive = activeSub === sub.name;
@@ -135,15 +138,15 @@ export default function FeaturedCollection() {
                     <button
                       key={sub.name}
                       onClick={() => setActiveSub(sub.name)}
-                      className={`inline-flex items-center rounded-full border px-4 py-2 font-sans text-[11px] tracking-[0.18em] uppercase transition-all duration-300 ${
+                      className={`inline-flex items-center rounded-full border px-3.5 py-1.5 font-sans text-[10px] tracking-[0.16em] uppercase transition-all duration-300 sm:px-4 sm:py-2 sm:text-[11px] ${
                         isActive
-                          ? 'border-white/40 bg-zinc-800 text-white font-semibold shadow-sm'
-                          : 'border-white/10 bg-zinc-900/40 text-zinc-400 hover:border-white/25 hover:text-white'
+                          ? 'border-white/50 bg-white/15 text-white font-semibold shadow-[0_4px_16px_rgba(255,255,255,0.1)] backdrop-blur-md'
+                          : 'border-white/10 bg-zinc-900/40 text-zinc-400 hover:border-white/25 hover:bg-white/5 hover:text-white'
                       }`}
                     >
                       <span>{sub.name}</span>
                       {sub.isComingSoon && (
-                        <span className="ml-2 rounded-full border border-white/15 bg-white/10 px-2 py-0.5 font-mono text-[9px] font-medium tracking-widest text-zinc-300">
+                        <span className="ml-1.5 rounded-full border border-white/20 bg-white/10 px-1.5 py-0.5 font-mono text-[8px] font-medium tracking-widest text-zinc-300">
                           SOON
                         </span>
                       )}
