@@ -10,15 +10,17 @@ export default function Footer() {
   const socialLinks = [
     { name: 'INSTAGRAM', href: '#' },
     { name: 'X / TWITTER', href: '#' },
-    { name: 'SPOTIFY', href: '#' },
   ];
 
   return (
     <footer className="w-full border-t border-white/10 bg-black px-6 py-16 text-white md:px-12">
       <div className="mx-auto flex max-w-7xl flex-col space-y-12 md:flex-row md:items-center md:justify-between md:space-y-0">
-        {/* Brand & Copyright */}
+        {/* Brand, Location & Copyright */}
         <div className="flex flex-col space-y-3">
           <span className="font-sans text-xl font-bold tracking-[0.35em] text-white">FLIQ</span>
+          <p className="font-sans text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            FLAGSHIP // MADHAPUR, HYDERABAD (OPPOSITE GOWRA FOUNTAINHEAD)
+          </p>
           <p className="font-sans text-[10px] tracking-[0.2em] text-zinc-500 uppercase">
             © 2026 FLIQ UNISEX CLOTHING. ALL RIGHTS RESERVED.
           </p>

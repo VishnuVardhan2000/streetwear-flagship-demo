@@ -18,8 +18,17 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'FLIQ Digital Flagship',
-  description: 'FLIQ Premium Streetwear',
+  title: 'FLIQ // Monolithic Architectural Luxury Streetwear',
+  description:
+    'FLIQ Unisex Clothing Flagship. Monolithic silhouettes, 500GSM French Terry, 14oz selvedge denim, and tactical urban utility wear from Madhapur, Hyderabad.',
+  openGraph: {
+    title: 'FLIQ // Monolithic Architectural Luxury Streetwear',
+    description:
+      'FLIQ Unisex Clothing Flagship. Monolithic silhouettes, 500GSM French Terry, 14oz selvedge denim, and tactical urban utility wear.',
+    images: ['/images/products/fliq-look-01.jpg'],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
