@@ -83,7 +83,7 @@ export default function FeaturedCollection() {
               OFFICIAL CATALOGUE CATEGORY
             </span>
             <h3 className="font-serif text-3xl font-light tracking-widest text-white uppercase">
-              {selectedCategory} // COMING SOON
+              {selectedCategory} {'//'} COMING SOON
             </h3>
             <p className="mt-3 max-w-sm font-sans text-xs tracking-wider text-zinc-400 uppercase">
               This category will be unlocked in the upcoming drop. No placeholder items created.
