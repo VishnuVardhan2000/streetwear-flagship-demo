@@ -6,10 +6,10 @@ export default function BrandManifesto() {
   return (
     <section
       id="manifesto"
-      className="relative w-full overflow-hidden border-t border-white/10 bg-zinc-950 px-6 py-36 text-white md:px-12"
+      className="relative w-full overflow-hidden bg-transparent px-6 py-36 text-white md:px-12"
     >
-      {/* Background Subtle Mesh Lighting */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.02] blur-3xl" />
+      {/* Background Subtle Radial Depth Lighting */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[450px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.015] blur-3xl" />
 
       <div className="mx-auto flex max-w-5xl flex-col items-center space-y-12 text-center">
         <motion.span

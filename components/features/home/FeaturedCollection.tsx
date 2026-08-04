@@ -79,7 +79,7 @@ export default function FeaturedCollection() {
   return (
     <section
       id="collection"
-      className="relative w-full border-t border-white/10 bg-black px-4 py-28 text-white sm:px-6 md:px-12 md:py-32"
+      className="relative w-full bg-transparent px-4 py-28 text-white sm:px-6 md:px-12 md:py-36"
     >
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}

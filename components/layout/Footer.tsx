@@ -15,7 +15,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full border-t border-white/10 bg-black px-6 py-16 text-white md:px-12">
+    <footer className="relative z-10 w-full border-t border-white/10 bg-zinc-950/80 backdrop-blur-2xl px-6 py-16 text-white md:px-12">
       <div className="mx-auto flex max-w-7xl flex-col space-y-12 md:flex-row md:items-center md:justify-between md:space-y-0">
         {/* Brand, Location & Copyright */}
         <div className="flex flex-col space-y-3">

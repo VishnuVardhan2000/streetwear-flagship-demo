@@ -7,7 +7,7 @@ export default function StoreCTA() {
   return (
     <section
       id="store"
-      className="relative w-full border-t border-white/10 bg-black px-6 py-32 text-white md:px-12"
+      className="relative w-full bg-transparent px-6 py-32 text-white md:px-12"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
